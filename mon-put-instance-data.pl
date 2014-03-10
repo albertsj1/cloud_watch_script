@@ -392,7 +392,7 @@ if ($report_mem_util || $report_mem_used || $report_mem_avail || $report_swap_ut
   if (!defined($mem_used_incl_cache_buff)) {
      $mem_avail += $mem_cached + $mem_buffers;
   }
-  my $mem_used = $mem_total - $mem_avail;
+  my $mem_used = $mem_total - $mem_avail - $mem_buffers;
   my $swap_total = $meminfo{'SwapTotal'} * KILO;
   my $swap_free = $meminfo{'SwapFree'} * KILO;  
   my $swap_used = $swap_total - $swap_free;
